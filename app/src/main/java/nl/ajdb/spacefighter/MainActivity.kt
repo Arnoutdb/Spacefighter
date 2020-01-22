@@ -2,9 +2,8 @@ package nl.ajdb.spacefighter
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,13 +12,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Luister naar een klik op de play knop
-        buttonPlay.setOnClickListener {
-            startActivity(GameActivity.intent(this@MainActivity))
-        }
+        /*
+            Opdracht 1: Luister naar een klik op de play knop
+        */
 
-        buttonScore.setOnClickListener {
-            startActivity(HighScoreActivity.intent(this@MainActivity))
-        }
+        /*
+            Opdracht 6: High score inzien
+         */
+
     }
 
     companion object {

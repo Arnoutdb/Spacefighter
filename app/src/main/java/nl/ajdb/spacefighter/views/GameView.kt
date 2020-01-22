@@ -132,14 +132,11 @@ class GameView(context: Context, val screenX: Int, val screenY: Int) : SurfaceVi
 
         //if collision occurs with player
         if (Rect.intersects(player.getDetectCollision(), enemies.getDetectCollision())) {
-            //displaying boom at that location
-            boom.x = enemies.getX()
-            boom.y = enemies.getY()
 
-            //will play a sound at the collision between player and the enemy
-            killedEnemysound.start()
+            /*
+                Opdracht 3a: Botsing waarnemen
+             */
 
-            enemies.setX(-400f)
         }// the condition where player misses the enemy
         else{
             //if the enemy has just entered
@@ -197,16 +194,9 @@ class GameView(context: Context, val screenX: Int, val screenY: Int) : SurfaceVi
         //checking for a collision between player and a friend
         if(Rect.intersects(player.getDetectCollision(),friend.getDetectCollision())){
 
-            //displaying the boom at the collision
-            boom.x = friend.x
-            boom.y = friend.y
-            //setting playing false to stop the game
-            playing = false
-            //setting the isGameOver true as the game is over
-            isGameOver = true
-
-            gameOnsound.stop()
-            gameOversound.start()
+            /*
+                Opdracht 4: Vriendelijke ruimteschepen ontwijken
+             */
 
             //Assigning the scores to the highscore integer array
             var num = 0
@@ -266,6 +256,10 @@ class GameView(context: Context, val screenX: Int, val screenY: Int) : SurfaceVi
                 val lives = 3 - countMisses
                 canvas.drawText("lives: $lives",300f,50f,paint)
 
+                /*
+                    Opdracht 3b: Inzicht in de botsing
+                 */
+
                 //Drawing the player
                 canvas.drawBitmap(
                     player.getBitmap(),
@@ -273,6 +267,11 @@ class GameView(context: Context, val screenX: Int, val screenY: Int) : SurfaceVi
                     player.getY(),
                     paint)
 
+                /*
+                    Opdracht 3b: Inzicht in de botsing
+                 */
+
+                //Drawing the enemy
                 canvas.drawBitmap(
                     enemies.getBitmap(),
                     enemies.getX(),
@@ -340,21 +339,15 @@ class GameView(context: Context, val screenX: Int, val screenY: Int) : SurfaceVi
     }
 
     override fun onTouchEvent(motionEvent: MotionEvent): Boolean {
-        when (motionEvent.action and MotionEvent.ACTION_MASK) {
-            MotionEvent.ACTION_UP -> {
-                player.stopBoosting()
-            }
-            MotionEvent.ACTION_DOWN -> {
-                player.startBoosting()
-            }
-        }
 
-        //if the game's over, tappin on game Over screen sends you to MainActivity
-        if (isGameOver) {
-            if (motionEvent.action === MotionEvent.ACTION_DOWN) {
-                context.startActivity(MainActivity.intent(context))
-            }
-        }
+        /*
+            Opdracht 2: Beweeg het popetje
+         */
+
+        /*
+            Opdracht 5: Terug naar het hoofdmenu
+         */
+
         return true
     }
 }
