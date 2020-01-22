@@ -1,4 +1,4 @@
-package nl.ajdb.spacefighter.player
+package nl.ajdb.spacefighter.personas
 
 import android.graphics.Bitmap
 import android.content.Context

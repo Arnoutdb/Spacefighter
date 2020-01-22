@@ -13,10 +13,10 @@ import android.view.SurfaceView
 import kotlinx.coroutines.*
 import nl.ajdb.spacefighter.MainActivity
 import nl.ajdb.spacefighter.R
-import nl.ajdb.spacefighter.player.Boom
-import nl.ajdb.spacefighter.player.Enemy
-import nl.ajdb.spacefighter.player.Friend
-import nl.ajdb.spacefighter.player.Player
+import nl.ajdb.spacefighter.personas.Boom
+import nl.ajdb.spacefighter.personas.Enemy
+import nl.ajdb.spacefighter.personas.Friend
+import nl.ajdb.spacefighter.personas.Player
 import kotlin.coroutines.CoroutineContext
 
 
